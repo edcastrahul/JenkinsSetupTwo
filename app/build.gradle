@@ -11,10 +11,20 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile file("D:\\FindAway\\Sign Key And Pckage Change Script\\MathRef")
+            storePassword "1AndroidQ"
+            keyAlias "quizmine"
+            keyPassword "1AndroidQ"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
